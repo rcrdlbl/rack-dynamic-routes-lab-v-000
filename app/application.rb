@@ -1,3 +1,4 @@
+require 'pry'
 class Application
   @@items = []
 
@@ -9,8 +10,8 @@ class Application
 
       item_name = req.path.split(/items/).last
       item = @@items.find{|i| i.name == item_name}
-
-      if 
+      binding.pry
+      if
         resp.write item.price
       else
         resp.status = 400
